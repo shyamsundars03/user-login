@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus{
+    outline:none ;
+}
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/bg.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'roboto', sans-serif;
+}
+.form{
+    width: 400px;
+    height: auto;
+    color: #fff;
+    font-family: 'roboto',sans-serif;
+}
+.heading{
+    
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+input,.submit-btn{
+   
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: rgba(225,225,225,0.3);
+    border: none;
+    color: #fff;
+    padding: 15px;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+input::placeholder{
+    color: #fff;
+}
+input:focus,.submit-btn:hover{
+    background: #fff;
+    color: black;
+}
+input:focus::placeholder{
+    color: #000;
+}
+.submit-btn{
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 50px auto 0;
+    
+}
+.Link{
+
+    
+    text-align: center;
+    text-transform: capitalize;
+   
+    color: rgba(225,225,225,0.5);
+    display: block;
+    margin: 30px auto;
+}
+.Link:hover{
+    color: #fff;
+}
+.alert-box{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    text-transform: capitalize;
+    background: rgba(225,119,119);
+    border-top: 10px solid rgba(255,37,37);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    font-family: 'roboto',sans-serif;
+    text-align: center;
+    transition: 1s;
+}
+
+   </style>
+
+
+</head>
+<body>
+
+ 
+
+
+<form  action="/login" method="post" >
+<div class="form">
+
+    <% if (messages.error) { %>
+        <div class="alert alert-danger">
+          <strong><%= messages.error %> </strong>
+        </div>
+      <% } %> 
+
+
+
+<h1 class="heading">Login</h1>
+<input  type="email" name="email"  placeholder="email"  autocomplete="off" class="email" required> 
+ <input  type="password" name="password"  placeholder="password"  autocomplete="off" class="password" required>
+
+<button type="submit"  class="submit-btn">Log In</button>
+<a href="/register" class="Link">don't have an account? Register one</a>
+
+
+
+
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/form.js"  ></script>
+</body>
+</html>
